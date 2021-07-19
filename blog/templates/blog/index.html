@@ -1,0 +1,50 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block title %} 
+    My Blog 
+{% endblock %} 
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/post.css' %}" />
+<link rel="stylesheet" href="{% static 'blog/index.css' %}" />
+{% endblock %} 
+
+{% block content %}
+<section id="welcome">
+  <header>
+    <img
+      src="{% static 'blog/images/emma.jpg' %}"
+      alt="Emma - The Author of this blog"
+    />
+    <h2>ADEDIRE'S BLOG</h2>
+  </header>
+  <p>Hi, I am Adedrey and I love to blog about tech and the world!</p>
+</section>
+
+<section id="latest-posts">
+  <h2>My Latest Thoughts</h2>
+  <ul>
+  {% for post in posts %}
+    {% include "blog/includes/post.html" %}
+  {% endfor %}
+    
+  </ul>
+</section>
+
+<section id="about">
+  <h2>What I Do</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores labore
+    eius quo libero beatae accusantium, ipsa sunt. Veniam quam, impedit
+    distinctio velit sint deserunt nemo et atque consequuntur, consequatur
+    possimus.
+  </p>
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, ex
+    reprehenderit atque nulla totam nemo saepe temporibus dolorum voluptate
+    suscipit excepturi modi soluta similique? Iure magni veniam voluptatum quos
+    fugiat!
+  </p>
+</section>
+{% endblock %}
